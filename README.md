@@ -42,7 +42,7 @@ Change directory into the project folder:
 cd Clickr
 Install dependencies:
 ```bash
-   \npm install
+   npm install
 ```
 ▶️ Running the App:
 Start the server with:
