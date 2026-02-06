@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Clickr | Client</title>
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="stylesheet" href="../styles.css">
+    </head>
+    <body>
+            <div id="start-settings"><h1>Please select a settings category.</h1></div>
+            <div id="weather-settings" style="display: none;">
+                <h1>Weather Settings</h1>
+                <div class="settings-container">
+                <label for="weather-api-key">Weather API Key:</label>
+                <input type="text" class="textinput" id="weather-api-key" name="weather-api-key" placeholder="Enter your API key">
+                <br>
+                <b class="settings-note">Please get one from <a href="https://openweathermap.org/api" target="_blank">OpenWeatherMap</a></b>
+                <br><br>
+                <label for="city-name">Zip code:</label>
+                <input type="text" class="textinput" id="city-name" name="city-name" placeholder="Enter your zip code">
+                <br>
+                <b class="settings-note">Make sure it's entered correctly!</b>
+                <br><br>
+                <label for="units">Units:</label>
+                <select id="units" class="textinput" name="units">
+                    <option value="imperial">Imperial (°F)</option>
+                    <option value="metric">Metric (°C)</option>
+                </select>  
+                <br><br>
+                <label for="show-weather-icon">Show Weather Icon:</label>
+                <input type="checkbox" id="show-weather-icon" name="show-weather-icon" checked>
+                <br><br>
+                <label for="show-temperature">Show Temperature:</label>
+                <input type="checkbox" id="show-temperature" name="show-temperature" checked>  
+                <br><br>
+                <label for="weather-text-color" >Weather Text Color:</label>
+                <input type="color"  class="colorinput" id="weather-text-color" name="weather-text-color" value="#FFFFFF">
+                <br>
+                <b class="settings-note">Changes the color of the temperature text.</b>
+                <br><br>
+                <button id="save-weather-settings" class="save-button">Save</button>
+                <br>
+                <b class="settings-note">Settings WILL NOT SAVE unless you press the button! We use LocalStorage to save your settings.</b>
+            </div></div>
+            <div id="Other-Settings" style="display: none;">
+                <h1>Other Settings</h1>
+                <div class="settings-container">
+                <label for="clock-text-color" >Clock Text Color:</label>
+                <input type="color" class="colorinput" id="clock-text-color" name="clock-text-color" value="#FFFFFF">
+                <br>
+                <b class="settings-note">Changes the color of the clock text.</b>
+                <br><br>
+                <label for="day-text-color" >Day and Date Text Color:</label>
+                <input type="color" class="colorinput" id="day-text-color" name="day-text-color" value="#FFFFFF">
+                <br>
+                <b class="settings-note">Changes the color of the day and date text.</b>
+                <br><br>
+                <label for="show-day">Show Day:</label>
+                <input type="checkbox" id="show-day" name="show-day" checked>  
+                <br>
+                <b class="settings-note">Note: You can still have 1 of either, or both day and date visible at a time.</b>
+                <br><br>
+                <label for="show-date">Show Date:</label>
+                <input type="checkbox" id="show-date" name="show-date" checked>  
+                <br>
+                <b class="settings-note">Note: You can still have 1 of either, or both day and date visible at a time.</b>
+                <br><br>
+                <label for="bottombar-text-color" >Footer Text Color:</label>
+                <input type="color" class="colorinput" id="bottombar-text-color" name="bottombar-text-color" value="#FFFFFF">
+                <br>
+                <b class="settings-note">Changes the color of the footer text.</b>
+                <br><br>
+                <label for="show-bottombar">Show Footer:</label>
+                <input type="checkbox" id="show-bottombar" name="show-bottombar" checked> 
+                <br><br>
+                <label for="background-color" >Background Color:</label>
+                <input type="color"  class="colorinput" id="background-color" name="background-color" value="#141414">
+                <br>
+                <b class="settings-note">Changes the background color of the clock page.</b>
+                <br><br>
+                <label for="background-image-url">Background Image URL:</label>
+                <input type="text" class="textinput" id="background-image-url" name="background-image-url" placeholder="Enter image URL">
+                <br>
+                <b class="settings-note">Make sure it's a direct link to the image, or a data uri.</b>
+                <br><br>
+                <label for="background-opacity">Background Image Opacity (0 to 1):</label>
+                <input type="number" class="textinput" id="background-opacity" name="background-opacity" min="0" max="1" step="0.1" value="1">
+                <br><br>
+                <label for="sidebar-color" >Sidebar Color:</label>
+                <input type="color" class="colorinput" id="sidebar-color" name="sidebar-color" value="#141414">
+                <br>
+                <b class="settings-note">Changes the color of the sidebar.</b>
+                <br><br>
+                <label for="sidebar-icon-color" >Sidebar Icon Color:</label>
+                <input type="color" class="colorinput" id="sidebar-icon-color" name="sidebar-icon-color" value="#FFFFFF">  
+                <br><br>
+                <button id="save-other-settings" class="save-button">Save</button>
+                <br>
+                <b class="settings-note">Settings WILL NOT SAVE unless you press the button! We use LocalStorage to save your settings.</b>
+            </div></div>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            <!--SAVED MESSAGE-->
+<div id="save-popup" class="save-popup hidden">
+  <p id="save-message">Settings saved</p>
+</div>
+
+            <!--FOOTER/NAVBAR-->
+            <div class="nav-container" >
+            <div class="nav">
+            <button class="nav-button" id="weather-settings-button">Weather Settings</button>
+            <button class="nav-button" id="other-settings-button">Other Settings</button>
+            <button class="nav-button" id="back-to-clock-button" onclick="window.location.href = '../index.html';">Back</button>
+            </div></div>
+
+            <!--scripts-->
+            <script src="settings.js"></script>
+    </body>
+</html>
+
+
+
+
+
+  
