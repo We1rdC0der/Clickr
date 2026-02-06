@@ -40,3 +40,5 @@ Start the app:
 ```bash
 node server.js
 ```
+
+Now you can go onto any browser, put your host pc's Local Ip adress into the URL bar, and then ```:3000``` then open the project up!
