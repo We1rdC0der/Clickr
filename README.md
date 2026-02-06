@@ -36,13 +36,16 @@ Before running Clickr, make sure you have installed:
 
    ```bash
    git clone https://github.com/We1rdC0der/Clickr.git
+   ``` 
 Change directory into the project folder:
 
 cd Clickr
 Install dependencies:
-
-npm install
-▶️ Running the App
+```bash
+   \npm install
+```
+▶️ Running the App:
 Start the server with:
-
+```bash
 node server.js
+```
