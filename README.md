@@ -1,51 +1,42 @@
 # Clickr
 
-Clickr is a **Node.js application** currently in development that aims to allow remote control of your **PC and Home Assistant*comming soon!*** setup — a starting point for building custom automation and control tools.
-
-> *This project is in early stages — improvements and features are continuously being added.*
+Clickr is a **Node.js app** that lets you control your PC and Home Assistant stuff. It's still being worked on, so more features will come later.
 
 ---
 
-## 🚀 Features
+## Features
 
-At its current stage, Clickr serves as a foundation for:
-
-- A Node.js-powered application server
-- A clock that any browser or device with a browser can use *will add fullscreen soon!*
-
-*(More features to come as the project evolves!)*
+- Runs on Node.js
+- Runs a clock
 
 ---
 
-## 📦 Getting Started
+## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+### What you need
 
-### 🔧 Prerequisites
-
-Before running Clickr, make sure you have installed:
-
-- [Node.js](https://nodejs.org/) (v14+ recommended)
+- Node.js installed
 - npm (comes with Node.js)
 
 ---
 
-## 🛠 Installation
+## How to Install
 
 1. Clone the repo:
 
-   ```bash
-   git clone https://github.com/We1rdC0der/Clickr.git
-   ``` 
-Change directory into the project folder:
-
-cd Clickr
-Install dependencies:
 ```bash
-   npm install
+git clone https://github.com/We1rdC0der/Clickr.git
 ```
-▶️ Running the App:
-Start the server with:
+Go into the folder:
+```bash
+cd Clickr
+```
+Install the stuff it needs:
+```bash
+npm install
+```
+### How to Run
+Start the app:
 ```bash
 node server.js
 ```
