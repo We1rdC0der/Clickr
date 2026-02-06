@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--
+  LOGO COLORS
+  
+  Light blue: #3CB8FF
+  Dark blue: #1F6ED5
+  
+  -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="styles.css">
+  <title>Clickr | Client</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <div class="top-bar">
+      <div class="weather-left">
+        <img id="weather-icon" src="">
+        <p id="weather-temp">&nbsp;</p>
+      </div><div class="top-center" >
+        <h2 id="day" style="display: inline;"></h2> <span style="display: inline;" id="date"></span>
+      </div><div class="top-right"></div></div>
+
+    <!-- BIG CENTER CLOCK -->
+    <div class="center-clock">
+      <h1 id="clock"></h1>
+    </div>
+    <br><br><br><br>
+    <!-- BOTTOM BAR -->
+    <div class="bottom-bar" id="bottombar">
+      <div class="bottomleft">
+  <p>0.1</p>
+      </div>
+      <div class="bottomright">  
+      <p>Clickr  |  Turn any phone into a control panel</p>
+      </div></div></div>
+    <div class="sidebar">
+      <button class="back-button" onclick="startback()"style="width: 5vh; height: 24vh; margin-top: 20px; border: none; background: none; padding: 0;">
+      <p class="back" style="font-size: 50px; font-weight: bold;color:white;">&lt;</p>
+      </button>
+      <button class="home-assist-button" onclick="starthomeassist()" style="width: 5vh; height: 24vh; margin-top: 20px; border: none; background: none; padding: 0; margin-top:auto;">
+        <img src="home-assistant.png" alt="Home Assistant" style="width:40px;height:40px;color:white;">
+        </button>
+        <button class="settings-button" onclick="startsettings()" style="width: 5vh; height: 24vh; margin-top: 20px; border: none; background: none; padding: 0; margin-top:auto; margin-bottom:7vh;">
+        <img src="settings.png" alt="Settings" style="width: 40px;height:40px;color:white;">
+        </button>
+    </div>
+
+<!--error message-->
+
+    <div id="error-popup" class="error-popup hidden">
+  <p id="error-message"></p>
+</div>
+
+  <!--scripts-->
+  <script src="clock.js"></script>
+  <script src="weather-day.js"></script>
+  <script>         
+   function startsettings() {
+    window.location.href = "settings/index.html";
+}
+  </script>
+  <script src="applySettings.js"></script>
+</body>
+</html>

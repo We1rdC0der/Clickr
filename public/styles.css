@@ -1,0 +1,408 @@
+    /* Font */
+    @font-face { font-family: latoblack; src: url('Lato-Black.ttf'); } 
+
+    /* Page */
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-color: #141414;
+      color: white;
+      font-family: latoblack;
+    }
+
+    #loading {
+      display: flex;
+      align-items: center;   
+      justify-content: center; 
+      height: 100vh;          
+    }
+    #loading-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    align-items: center; 
+  }
+
+
+    /* OUTER CONTENT LAYOUT */
+    #main-content {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* vertically center all children */
+    }
+
+    /* TOP SECTION */
+    .top-bar {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      position: relative;
+      height: 100px;
+    }
+
+    /* LEFT WEATHER */
+    .weather-left {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    #weather-icon {
+      width: 80px;
+      height: 80px;
+    }
+
+    #weather-temp {
+      font-size: 40px;
+    }
+
+    /* CENTER DAY + SMALL CLOCK */
+    .top-center {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+    }
+
+    .top-center h2 {
+      margin: 0;
+      font-size: 40px;
+    }
+
+    /* CENTER HUGE CLOCK */
+    .center-clock {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 10%;
+    }
+
+    .center-clock h1 {
+      font-size: 16rem;
+      margin: 0;
+    }
+
+    /* BOTTOM BAR */
+    .bottom-bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* left & right sides spread */
+  align-items: center;
+}
+
+.bottomleft {
+  text-align: left; /* version number stays left */
+  padding-left:5px;
+}
+
+.bottomright {
+  text-align: right; /*  aligned right */
+  padding-right:5px;
+}
+
+
+    .bottom-bar p {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .versionnumber p{
+      padding-right: 40px;
+    }
+
+    
+    .bottom-bar{
+  position: absolute;      
+  z-index: 9998;  
+  margin-top: 95vh;
+  margin-right: 60px;
+    }
+    .settings-left{
+      text-align:center;
+width:100%;
+
+
+    }
+    .settings-left-container{
+ float:left;
+width: 30%;
+  height:100%;
+  border-right: 2px solid rgb(70, 70, 70);
+
+  
+    }
+    .settings-right{
+ width: 100%;
+ float: right;
+  height: 100%;
+  text-align: center;
+    }
+    .settings-main-div{
+      display: flex;
+      height: 100vh;
+      float: left;
+      width: 50vw;
+    }
+    .settings-selector{
+      background-color: rgba(255, 0, 0, 0);
+      border: 2px solid rgb(70, 70, 70);
+      color: white;
+      font-size: auto;
+      border-radius: 15px;
+      padding: 10px;
+      margin: auto;
+      width: 80%;
+      height: 5%;
+      vertical-align: middle;
+      place-items: center;
+  display: grid;
+  place-items: center;
+    }
+
+.settings-selector-close{
+      background-color: rgba(255, 0, 0, 0);
+      border: 2px solid rgb(102, 32, 32);
+      color: white;
+      font-size: auto;
+      border-radius: 15px;
+      padding: 10px;
+      margin: auto;
+      width: 80%;
+      height: 5%;
+      vertical-align: middle;
+      place-items: center;
+  display: grid;
+  place-items: center;
+}
+
+    .settings-selector:hover {
+      background-color: rgb(70, 70, 70);
+      border: 2px solid rgb(70, 70, 70);
+      color: white;
+      font-size: auto;
+      border-radius: 15px;
+      padding: 10px;
+      margin: auto;
+      width: 80%;
+      height: 5%;
+      vertical-align: middle;
+      place-items: center;
+  display: grid;
+  place-items: center;
+    }
+
+.settings-selector-close:hover {
+      background-color: rgb(102, 32, 32);
+      border: 2px solid rgb(102, 32, 32);
+      color: white;
+      font-size: auto;
+      border-radius: 15px;
+      padding: 10px;
+      margin: auto;
+      width: 80%;
+      height: 5%;
+      vertical-align: middle;
+      place-items: center;
+  display: grid;
+  place-items: center;
+}
+
+
+    hr{
+      border: 0;
+      border-radius: 32px;
+      height: 2px;
+      background: rgb(70, 70, 70);
+      margin-top: 10px;
+      margin-bottom: 10px;
+      width: 90%;
+    }
+
+    /*SIDE BAR*/
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 5vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 20px;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    }
+
+    /*SETTINGS FOOTER/NAV BAR*/
+    .nav-container {
+      align-items: center;
+      margin-left: 5vw;
+    }
+
+    .nav{
+      bottom: 0;
+      margin-bottom: 2vh;
+      width: 90vw;
+      height: 60px;
+      background-color: #1a1a1a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+      border-radius: 30px;
+      position: fixed;
+    }
+
+    .nav-button {
+      background-color: #1a1a1a;
+      color: white;
+      border: 1px solid #444;
+      border-radius: 30px;
+      padding: 10px 20px;
+      margin: 0 10px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+      width: 33%;
+      height: 100%;
+    } 
+    .nav-button:hover {
+      background-color: #444;
+      color: white;
+      border: 1px solid #444;
+      border-radius: 30px;
+      padding: 10px 20px;
+      margin: 0 10px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+      width: 33%;
+      height: 100%;
+    } 
+
+    .settings-note {
+      font-size: 12px;
+      color: #888;
+    } 
+
+    .settings-note a {
+      font-size: 12px;
+      color: #0085b9;
+    } 
+    
+    :checked{
+      accent-color: #0085b9;
+    }
+
+    .textinput{
+      color: white;
+      background-color: #141414;
+      border: 1px white solid;
+      border-radius: 5px;
+      padding: 5px;
+
+    }
+
+    .colorinput{
+      color: white;
+      background-color: #141414;
+      border: 0px;
+      border-radius: 5px;
+      padding: 5px;
+      width: 40px;
+      height: 40px;
+      
+    }
+
+    .save-button{
+      background-color: #141414;
+      color: white;
+      transition: background-color 0.3s;
+      border: 2px solid #007728;
+      border-radius: 30px;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .save-button:hover{
+      background-color: #007728;
+      color: white;
+      transition: background-color 0.3s;
+      border: 2px solid #007728;
+      border-radius: 30px;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .settings-container{
+      background-color: #1a1a1a;
+      padding: 20px;
+      border-radius: 30px;
+      margin: 20px;
+    } 
+    h1{
+      margin-left:2vw;
+    }
+
+
+
+
+    /* ERROR POPUP */
+    .error-popup {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ff3b3b;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.error-popup.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(10px);
+}
+
+/* SAVE POPUP */
+.save-popup {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #3CB8FF;
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: 12px;
+  font-size: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.save-popup.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(-10px);
+}
