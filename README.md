@@ -2,8 +2,8 @@
 
 ![Clickr 0.1.2 realse img](readmefiles/0-1-2-Clickr-release-photo.png)
    
-Clickr is a **Node.js app** that you can use on **any device** with a browser.
-With Clickr (pronouced click-er) you can **fully costomize** a clock, the date, and your local weather (for US only).
+Clickr (pronouced click-er) is a **Node.js app** that you can use on **any device** with a browser.
+With Clickr you can **fully costomize** a clock, the date, and your local weather (for US only).
 
 ---
 
