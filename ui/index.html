@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <title>Clickr | Server</title>
+    <script>
+        console.log("Head loaded. window.clickr =", window.clickr);
+    </script>
+</head>
+<body>
+
+    <nav class="nav">
+        <h1 class="nav-title"><img src="../assets/icons/favicon.png" alt="Clickr-logo" class="nav-logo"><span class="nav-heading">Clickr</span></h1>
+        <button id="welcome-btn" onclick="page('welcome')">Welcome</button>
+        <button id="client-btn" onclick="page('client')">Client</button>
+        <button id="settings-btn" onclick="page('settings')">Settings</button>
+        <button id="apps-btn" onclick="page('apps')">Apps</button>
+    </nav>
+    <hr style="width:90vw; margin-right:auto; margin-left:auto; border: none; height: 1px; margin-top: 0px; background-color: #49494931">
+
+
+    <div id="landing">
+
+        <h1 class="Clickr-full-logo"><img src="../assets/icons/favicon.png" alt="Clickr-logo" class="welcome-logo"><span class="welcome-heading">Clickr</span></h1>
+        <div class="welcome-buttons">
+            <button class="welcome-button" id="welcome-github" onclick="newtab('github')" target="_blank">Github <img class="welcome-button-icon" src="../assets/welcome/github.png" alt="Github"></button>
+            <button class="welcome-button" id="welcome-docs" onclick="newtab('docs')" target="_blank">Documentation<img class="welcome-button-icon" src="../assets/welcome/docs.png" alt="Documentation"></button>
+            <button class="welcome-button" id="welcome-youtube" onclick="newtab('youtube')" target="_blank">Youtube <img class="welcome-button-icon" src="../assets/welcome/youtube.png" alt="Youtube"></button>
+            <button class="welcome-button" id="welcome-updates" onclick="newtab('updates')" target="_blank">Updates <img class="welcome-button-icon" src="../assets/welcome/updates.png" alt="Updates"></button>
+            <button class="welcome-button" id="welcome-start" onclick="newtab('start')" target="_blank">Get Started <img class="welcome-button-icon" src="../assets/welcome/start.png" alt="Get Started"></button>
+        </div>
+       
+        <footer class="welcome-footer">
+            <span class="builtby">built by we1rdc0der</span>
+            <span class="version">V26.4</span>
+            <span class="inspo">Inspired by Riprod's <button class="deskthing-link" onclick="newtab('deskthing')" target="_blank">Deskthing</button></span>
+        </footer>
+    </div>  
+
+<div id="client">
+
+    <nav class="client-nav">
+        <button id="add-device-btn" onclick="openadddevice()">Add Device</button>
+        <button onclick="refresh()">Refresh</button>
+    </nav>
+
+    <div class="client-layout">
+        
+            <div id="server-info">
+                <h3 style="margin-top: 0; color: #1F6ED5;">Connect from Other Devices</h3>
+            <div style="display: flex; gap: 20px; align-items: flex-start;">
+                <div style="flex: 1;">
+                    <p>Scan this QR code:</p>
+                    <div id="qrcode" style="display: inline-block; padding: 10px; background-color: white; border-radius: 4px;"></div>
+                </div>
+                <div style="flex: 1;">
+                    <p>Or open this URL:</p>
+                    <div id="server-url" style="font-size: 14px; font-weight: bold; color: #3CB8FF; word-break: break-all; padding: 10px; background-color: rgba(0,0,0,0.3); border-radius: 4px; margin: 10px 0;">
+                        Loading...
+                    </div>
+                    <p style="font-size: 12px; color: #999;">IP: <span id="server-ip">--</span> | Port: <span id="server-port">--</span></p>
+                    <p style="color: rgba(255,255,255,0.5);">Having trouble connecting?
+                         <a href="" target="_blank" style="color: #3cb7ff98;text-decoration: none;">Get help</a></p>
+                </div>
+            </div>
+            </div>
+            <div id="message"></div>
+        <div class="client-right">
+            <h2>Connected Clients</h2>
+            <div id="clients-list"></div>
+        </div>
+
+    </div>
+
+</div>
+
+    <div id="settings" style="display:none;">
+    <h2>Settings<br><br>Comming soon</h2>
+         
+     </div>
+
+    <div id="apps"  style="display:none;">
+    <h2>Apps<br><br>Comming soon</h2>
+    </div>
+
+<script src="ui-scripts/pages.js"></script>
+    <script src="renderer.js"></script>
+
+
+    <!--newtab script-->
+
+    <script>
+        function newtab(page) {
+            let url;
+            switch(page) {
+                case 'github':
+                    url = '';
+                    break;
+                case 'docs':
+                    url = '';
+                    break;
+                case 'youtube':
+                    url = '';
+                    break;
+                case 'updates':
+                    url = '';
+                    break;
+                case 'start':
+                    url = '';
+                    break;
+                case 'deskthing':
+                    url = 'https://deskthing.app';
+                    break;
+            }
+            window.api.openExternal(url);
+        }
+    </script>
+
+    <script src="ui-scripts/load-clients.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    
+</body>
+</html>
