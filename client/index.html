@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--
+  LOGO COLORS
+  
+  Light blue: #3CB8FF
+  Dark blue: #1F6ED5
+  
+  -->
+
+  <!--SERVER SCRIPTING-->
+<script>
+  if (!crypto.randomUUID) {
+    crypto.randomUUID = function() {
+      return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        const r = Math.random() * 16 | 0;
+        const v = c === 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+      });
+    };
+  }
+</script>
+<!--OTHER STUFFS-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+  <link rel="stylesheet" href="assets/styles.css">
+  <title>Clickr | Client</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <div class="top-bar">
+      <div class="weather-left">
+        <!--weather-->
+        <img id="weather-icon" src="">
+        <p id="weather-temp">&nbsp;</p>
+      </div><div class="top-center" >
+        <!--date-->
+        <h2 id="day" style="display: inline;"></h2> <span style="display: inline;" id="date"></span>
+      </div><div class="top-right">
+        <!--Settings/fullscreen buttons-->
+        
+        <button id="open-setings-btn" onclick="loadfullscreenSetting()" class="fullscreen-btn"><img id="fullscreen-img" src="" alt="Fullscreen"></button>
+
+        
+        <button id="open-settings-btn" onclick="startsettings()" class="settings-btn"><img class="settings-img" src="assets/settings.png" alt="Settings"></button>
+      </div></div>
+
+    <!-- BIG CENTER CLOCK -->
+    <div class="center-clock">
+      <h1 id="clock"></h1>
+    </div>
+    <br><br><br><br>
+    <!-- BOTTOM BAR -->
+    <div class="bottom-bar" id="bottombar">
+      <div class="bottomleft">
+  <p>V26.4</p>
+      </div>
+      <div class="bottomright">  
+      <p>Clickr</p>
+      </div></div></div>
+      
+<!--error message-->
+
+    <div id="error-popup" class="error-popup hidden">
+  <p id="error-message"></p>
+</div>
+
+  <!--scripts-->
+  <script src="clock.js"></script>
+  <script src="weather-day.js"></script>
+  <script>         
+   function startsettings() {
+    window.location.href = "settings/index.html";
+}
+  </script>
+  <script src="applySettings.js"></script>
+  <script>
+    const icon = document.getElementById('fullscreen-img');
+    let on = false;
+    icon.src = "assets/fullscreen.png";
+
+    function loadfullscreenSetting() {
+            if(on === true)
+            {
+                icon.src = "assets/exit-fullscreen.png";
+                on = false;
+
+                if (document.documentElement.requestFullscreen) {
+                    document.documentElement.requestFullscreen();
+                } else if (document.documentElement.webkitRequestFullscreen) { /* Safari */
+                    document.documentElement.webkitRequestFullscreen();
+                } else if (document.documentElement.msRequestFullscreen) { /* IE11 */
+                    document.documentElement.msRequestFullscreen();
+                }
+            }
+            else
+            {
+                icon.src = "assets/fullscreen.png";
+                on = true;
+
+                if (document.exitFullscreen) {
+                  document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) { /* Safari */
+                  document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) { /* IE11 */
+                document.msExitFullscreen();
+                }
+            }
+            
+    }
+</script>
+  
+
+
+<!--SERVER CODE DO NOT TOUCH-->
+<script>
+  const host = window.location.hostname;
+const ws = new WebSocket(`ws://${host}:3210`);
+ws.onopen = () => console.log("Connected to Clickr server");
+ws.onerror = (err) => console.error("WebSocket error:", err);
+ws.onmessage = (event) => {
+    console.log("Raw message received:", event.data); // add this
+    const msg = JSON.parse(event.data);
+    console.log("Parsed message:", msg); // and this
+    if (msg.type === "disconnected") {
+        ws.close();
+        window.location.href = "disconect.html";
+    }
+};
+</script>
+</body>
+</html>
