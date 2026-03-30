@@ -1,0 +1,35 @@
+{
+  "name": "clickr-server",
+  "version": "26.2.0",
+  "description": "Clickr Server",
+  "keywords": ["Clickr"],
+  "homepage": "https://github.com/We1rdC0der/Clickr#readme",
+  "bugs": {
+    "url": "https://github.com/We1rdC0der/Clickr/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/We1rdC0der/Clickr.git"
+  },
+  "license": "ISC",
+  "author": "we1rdc0der",
+  "type": "commonjs",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "build": {
+    "appId": "com.clickr.server",
+    "productName": "Clickr Server",
+    "win": { "target": "nsis", "icon": "assets/icons/favicon.png" },
+    "files": ["**/*", "!node_modules/.bin"]
+  },
+  "dependencies": {
+    "ws": "^8.17.0"
+  },
+  "devDependencies": {
+    "electron": "^30.0.0",
+    "electron-builder": "^24.0.0"
+  }
+}
